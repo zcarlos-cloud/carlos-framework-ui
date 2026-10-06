@@ -1,0 +1,21 @@
+@import './reset.css';
+@import './nprogress.css';
+@import './transition.css';
+
+html,
+body,
+#app {
+  height: 100%;
+  /*
+   * 主题基础文字色必须显式声明在根节点上。
+   * 缺了这条，浏览器会按 color-scheme 决定默认文字色：index.html 声明了
+   * `light dark`，于是**系统处于深色模式**时默认文字色是白的；而应用主题是
+   * 浅色（背景白），结果是「白字白底」——凡是没显式写颜色的原生元素全部隐形
+   * （antd 组件自带颜色，所以只有自己写的元素会中招）。
+   */
+  color: rgb(var(--base-text-color));
+}
+
+html {
+  overflow-x: hidden;
+}
